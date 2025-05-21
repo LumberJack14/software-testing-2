@@ -6,7 +6,7 @@ public class BaseFunctions {
     static double terms = 100;
 
 
-    static double sin(double x) {
+    public static double sin(double x) {
         x = (x + PI) % PI * 2;
         double mid = x, sum = x;
         int f = 1;
@@ -18,19 +18,19 @@ public class BaseFunctions {
         return sum;
     }
 
-    static double cos(double x) {
+    public static double cos(double x) {
         return sin(PI / 2 - x);
     }
 
-    static double csc(double x) {
+    public static double csc(double x) {
         return 1 / sin(x);
     }
 
-    static double sec(double x) {
+    public static double sec(double x) {
         return 1 / cos(x);
     }
 
-    static double ln(double x) {
+    public static double ln(double x) {
         if (x <= 0) return -1; // idk throw something
         int k = 0;
         double rx = x;
@@ -47,7 +47,7 @@ public class BaseFunctions {
         return (2 * res) + k * LN2;
     }
 
-    static double log(double l, double x) {
+    public static double log(double l, double x) {
         return ln(x) / ln(l);
     }
 
