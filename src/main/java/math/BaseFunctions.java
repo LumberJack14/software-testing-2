@@ -31,7 +31,9 @@ public class BaseFunctions {
     }
 
     public static double ln(double x) {
+        boolean invert = false;
         if (x <= 0) return -1; // idk throw something
+        if (x < 0.5) { invert = true; x = 1/x; }
         int k = 0;
         double rx = x;
         while (rx >= 1.5) {
@@ -44,7 +46,7 @@ public class BaseFunctions {
             res += pow / (2 * n + 1);
             pow *= y2;
         }
-        return (2 * res) + k * LN2;
+        return (invert ? -(2 * res) + k * LN2 : (2 * res) + k * LN2);
     }
 
     public static double log(double l, double x) {
