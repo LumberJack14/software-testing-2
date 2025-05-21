@@ -1,7 +1,7 @@
 package math;
 
 public class TestTables {
-    final static double SIN_IN[] = {
+    final public static double SIN_IN[] = {
             -3.14159,
             -3.03687,
             -2.93215,
@@ -63,8 +63,8 @@ public class TestTables {
             2.93215,
             3.03687
     };
-    final static double SIN_OUT[] = {
-            -1.22461e-16,
+    final public static double SIN_OUT[] = {
+            0,
             -0.104528,
             -0.207912,
             -0.309017,
@@ -94,7 +94,7 @@ public class TestTables {
             -0.309017,
             -0.207912,
             -0.104528,
-            8.60423e-16,
+            0,
             0.104528,
             0.207912,
             0.309017,
@@ -124,8 +124,9 @@ public class TestTables {
             0.309017,
             0.207912,
             0.104528,
+            0
     };
-    final static double LN_IN[] = {
+    final public static double LN_IN[] = {
             0.01,
             0.1,
             0.2,
@@ -162,10 +163,9 @@ public class TestTables {
             600,
             700,
             800,
-            900,
-            1000,
+            900
     };
-    final static double LN_OUT[] = {
+    final public static double LN_OUT[] = {
             -4.60517,
             -2.30259,
             -1.60944,
