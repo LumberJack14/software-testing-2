@@ -2,11 +2,15 @@ package math;
 
 public class BaseFunctions {
     static final double PI = 3.14159265358979323846;
+    static final double LN2 = 0.6931471805599453;
+    static double terms = 100;
+
 
     static double sin(double x) {
+        x = (x + PI) % PI * 2;
         double mid = x, sum = x;
         int f = 1;
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < terms; i++) {
             f += 2;
             mid = -mid * x * x / f / (f - 1);
             sum += mid;
@@ -28,13 +32,19 @@ public class BaseFunctions {
 
     static double ln(double x) {
         if (x <= 0) return -1; // idk throw something
-        double y = (x - 1) / (x + 1);
+        int k = 0;
+        double rx = x;
+        while (rx >= 1.5) {
+            rx /= 2;
+            k++;
+        }
+        double y = (rx - 1) / (rx + 1);
         double y2 = y * y, res = 0, pow = y;
-        for (int n = 0; n < 100; ++n) {
+        for (int n = 0; n < terms; ++n) {
             res += pow / (2 * n + 1);
             pow *= y2;
         }
-        return 2 * res;
+        return (2 * res) + k * LN2;
     }
 
     static double log(double l, double x) {
@@ -42,8 +52,8 @@ public class BaseFunctions {
     }
 
     public static void main(String[] args) {
-        System.out.println("real ln(0.00001): " + Math.log(0.00001));
-        System.out.println("our ln(0.00001): " + ln(0.00001));
+        System.out.println("real ln(0.00001): " + Math.log(100000));
+        System.out.println("our ln(0.00001): " + ln(100000));
 
     }
 }
