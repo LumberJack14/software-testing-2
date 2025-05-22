@@ -1,6 +1,5 @@
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
-import java.util.Scanner;
 
 import static math.TargetSystem.calculate;
 import static math.BaseFunctions.*;
