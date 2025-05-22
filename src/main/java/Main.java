@@ -1,3 +1,5 @@
+import math.BaseFunctions;
+
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 
@@ -6,6 +8,7 @@ import static math.BaseFunctions.*;
 
 public class Main {
 
+    private static BaseFunctions baseF = new BaseFunctions();
     public static void main(String[] args) {
         makeDong(args);
     }
@@ -42,31 +45,31 @@ public class Main {
                 try {
                     switch (functionName) {
                         case "sin":
-                            y = sin(x);
+                            y = baseF.sin(x);
                             break;
                         case "cos":
-                            y = cos(x);
+                            y = baseF.cos(x);
                             break;
                         case "sec":
-                            y = sec(x);
+                            y = baseF.sec(x);
                             break;
                         case "csc":
-                            y = csc(x);
+                            y = baseF.csc(x);
                             break;
                         case "ln":
-                            y = ln(x);
+                            y = baseF.ln(x);
                             break;
                         case "log2":
-                            y = log(2, x);
+                            y = baseF.log(2, x);
                             break;
                         case "log3":
-                            y = log(3, x);
+                            y = baseF.log(3, x);
                             break;
                         case "log5":
-                            y = log(5, x);
+                            y = baseF.log(5, x);
                             break;
                         case "log10":
-                            y = log(10, x);
+                            y = baseF.log(10, x);
                             break;
                         case "target":
                             y = calculate(x);

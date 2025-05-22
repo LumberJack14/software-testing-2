@@ -3,41 +3,38 @@ package math;
 public class TestFunctions {
     static final double PI = 3.14159265358979323846;
 
-    public static double sin(double x) {
-        x = (x + PI) % PI * 2;
+    private static final double DELTA = 0.00001;
+
+    public double sin(double x) {
+        //x = (x + PI) % (PI * 2);
         for (int i = 0; i < TestTables.SIN_IN.length; i++) {
-            if (x < TestTables.SIN_IN[i]) return TestTables.SIN_OUT[i];
+            if (x == TestTables.SIN_IN[i]) return TestTables.SIN_OUT[i];
         }
         return TestTables.SIN_OUT[TestTables.SIN_OUT.length - 1];
     }
 
-    public static double cos(double x) {
+    public double cos(double x) {
         return sin(PI / 2 - x);
     }
 
-    public static double csc(double x) {
-        return 1 / sin(x);
+    public double csc(double x) {
+        if (Math.abs(sin(x)) >= DELTA) return 1 / sin(x); else throw new IllegalArgumentException();
     }
 
-    public static double sec(double x) {
-        return 1 / cos(x);
+    public double sec(double x) {
+        if (Math.abs(cos(x)) >= DELTA)  return 1 / cos(x);  else throw new IllegalArgumentException();
     }
 
-    public static double ln(double x) {
-        boolean invert = false;
-        if (x <= 0) return -1; // idk throw something
-        if (x < 0.5) {
-            invert = true;
-            x = 1 / x;
-        }
+    public double ln(double x) {
+        if (x <= 0) throw new IllegalArgumentException();
         for (int i = 0; i < TestTables.LN_IN.length; i++) {
-            if (x < TestTables.LN_IN[i])
-                return (invert ? -TestTables.LN_OUT[i] : TestTables.LN_OUT[i]);
+            if (x == TestTables.LN_IN[i])
+                return TestTables.LN_OUT[i];
         }
-        return (invert ? -TestTables.LN_OUT[TestTables.LN_OUT.length] : TestTables.LN_OUT[TestTables.LN_OUT.length]);
+        return TestTables.LN_OUT[TestTables.LN_OUT.length - 1];
     }
 
-    public static double log(double l, double x) {
+    public double log(double l, double x) {
         return ln(x) / ln(l);
     }
 }
