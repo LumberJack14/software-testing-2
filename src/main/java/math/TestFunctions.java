@@ -18,11 +18,13 @@ public class TestFunctions {
     }
 
     public double csc(double x) {
-        if (Math.abs(sin(x)) >= DELTA) return 1 / sin(x); else throw new IllegalArgumentException();
+        if (Math.abs(sin(x)) >= DELTA) return 1 / sin(x);
+        else throw new IllegalArgumentException();
     }
 
     public double sec(double x) {
-        if (Math.abs(cos(x)) >= DELTA)  return 1 / cos(x);  else throw new IllegalArgumentException();
+        if (Math.abs(cos(x)) >= DELTA) return 1 / cos(x);
+        else throw new IllegalArgumentException();
     }
 
     public double ln(double x) {

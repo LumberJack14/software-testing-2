@@ -4,11 +4,11 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 
 import static math.TargetSystem.calculate;
-import static math.BaseFunctions.*;
 
 public class Main {
 
     private static BaseFunctions baseF = new BaseFunctions();
+
     public static void main(String[] args) {
         makeDong(args);
     }

@@ -5,6 +5,7 @@ import static math.BaseFunctions.*;
 public class TargetSystem {
     private static final double DELTA = 0.00001;
     private static BaseFunctions baseF = new BaseFunctions();
+
     public static double calculate(double x) {
         if (x <= 0) {
             return calcBelowZero(x);
@@ -26,7 +27,7 @@ public class TargetSystem {
         t = t * t;
         t = t + baseF.log(2, x) - (baseF.log(5, x) - baseF.log(10, x));
         if (Math.abs(baseF.log(2, x)) >= DELTA)
-        return t * baseF.log(5, x) / baseF.log(2, x);
+            return t * baseF.log(5, x) / baseF.log(2, x);
         else throw new IllegalArgumentException();
     }
 }

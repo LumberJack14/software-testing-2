@@ -21,7 +21,8 @@ public class TestTables {
             1,
             1.5,
             3,
-    };final static double SIN_OUT[] = {
+    };
+    final static double SIN_OUT[] = {
             0,
             0.512776,
             0.716656,
@@ -40,7 +41,8 @@ public class TestTables {
             0.841471,
             0.997495,
             0.14112,
-    };final static double LN_IN[] = {
+    };
+    final static double LN_IN[] = {
             -6.28319,
             -5.74477,
             -5.48419,
@@ -59,7 +61,8 @@ public class TestTables {
             1,
             1.5,
             3,
-    };final static double LN_OUT[] = {
+    };
+    final static double LN_OUT[] = {
             -INF,
             -INF,
             -INF,

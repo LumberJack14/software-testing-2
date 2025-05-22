@@ -24,17 +24,22 @@ public class BaseFunctions {
     }
 
     public double csc(double x) {
-        if (Math.abs(sin(x)) >= DELTA) return 1 / sin(x); else throw new IllegalArgumentException();
+        if (Math.abs(sin(x)) >= DELTA) return 1 / sin(x);
+        else throw new IllegalArgumentException();
     }
 
     public double sec(double x) {
-        if (Math.abs(cos(x)) >= DELTA)  return 1 / cos(x);  else throw new IllegalArgumentException();
+        if (Math.abs(cos(x)) >= DELTA) return 1 / cos(x);
+        else throw new IllegalArgumentException();
     }
 
     public double ln(double x) {
         boolean invert = false;
         if (x <= 0) throw new IllegalArgumentException();
-        if (x < 0.5) { invert = true; x = 1.0/x; }
+        if (x < 0.5) {
+            invert = true;
+            x = 1.0 / x;
+        }
         int k = 0;
         double rx = x;
         while (rx >= 1.5) {
